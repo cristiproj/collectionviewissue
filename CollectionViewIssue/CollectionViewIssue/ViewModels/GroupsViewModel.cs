@@ -12,7 +12,7 @@ namespace CollectionViewIssue.ViewModels
 
         public ICommand ShowStudents { get; set; }
 
-        public string counter = "2";
+        public string counter = "22";
 
         public string Counter
         {
@@ -62,7 +62,13 @@ namespace CollectionViewIssue.ViewModels
 
             }
 
-            Groups.Clear();
+            var groupsCounter = Groups.Count;
+            for (int i = groupsCounter - 1; i >= 0; i--)
+            {
+                Groups.RemoveAt(i);
+            }
+
+            //Groups.Clear();
             Groups.Add(new ItemGroup("Uneven students", "Students with Uneven ids", list1));
             Groups.Add(new ItemGroup("Even students", "Students with even ids", list2));
         }

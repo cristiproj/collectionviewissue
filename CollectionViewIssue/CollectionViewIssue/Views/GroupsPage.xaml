@@ -29,7 +29,13 @@
                 </CollectionView.GroupHeaderTemplate>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Button Text="{Binding Text}" />
+                        <Button Text="{Binding Text}">
+                            <Button.BackgroundColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="iOS" Value="#D3D3D3"/>
+                                </OnPlatform>
+                            </Button.BackgroundColor>
+                        </Button>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

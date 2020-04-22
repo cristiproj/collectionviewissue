@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -88,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CollectionViewIssue\CollectionViewIssue.csproj">
-      <Project>{ED78CF6D-9F9B-41D8-98E6-24C1CA40BD17}</Project>
+      <Project>{9212AFB2-75E0-47D3-975F-9D643B875EB7}</Project>
       <Name>CollectionViewIssue</Name>
     </ProjectReference>
   </ItemGroup>
