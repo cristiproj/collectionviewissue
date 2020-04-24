@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using CollectionViewIssue.Models;
+using MvvmHelpers;
 using Xamarin.Forms;
 
 namespace CollectionViewIssue.ViewModels
 {
     class GroupsViewModel : BaseViewModel
-    {
+    { 
         public ObservableCollection<ItemGroup> Groups { get; } = new ObservableCollection<ItemGroup>();
 
         public ICommand ShowStudents { get; set; }
@@ -26,7 +29,7 @@ namespace CollectionViewIssue.ViewModels
             ShowStudents = new Command(PrepareData);
         }
 
-        private void PrepareData()
+        private async void PrepareData()
         {
             var counterInt = 2;
             if (int.TryParse(counter, out int result))
@@ -62,13 +65,10 @@ namespace CollectionViewIssue.ViewModels
 
             }
 
-            var groupsCounter = Groups.Count;
-            for (int i = groupsCounter - 1; i >= 0; i--)
+            if (Groups.Any())
             {
-                Groups.RemoveAt(i);
+                Groups.Clear();
             }
-
-            //Groups.Clear();
             Groups.Add(new ItemGroup("Uneven students", "Students with Uneven ids", list1));
             Groups.Add(new ItemGroup("Even students", "Students with even ids", list2));
         }
